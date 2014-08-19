@@ -9,10 +9,10 @@ public class BD {
 	
 	private final String DRIVER = "com.mysql.jdbc.Driver";
 	private final String DATABASENAME = "workflow";
-	private final String URL = "jdbc:mysql://localhost:3306/"+
+	private final String URL = "jdbc:mysql://127.0.0.1:3306/"+
 											DATABASENAME;
 	private final String LOGIN = "root";
-	private final String SENHA = "12345";
+	private final String SENHA = "1234";
 	
 	/**
 	 * Realiza a conexão ao banco de dados

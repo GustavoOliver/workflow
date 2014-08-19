@@ -2,8 +2,31 @@ package model;
 
 public class Os {
 	
-	private int idOS,idCliente,idFuncionario,idMaquina;
-	private String date;
+	private int idOS,idCliente,idFuncionario,idMaquina,idProcesso,idEtapa;
+	private String date,dateOs;
+	
+	
+	
+	
+	
+	public int getIdEtapa() {
+		return idEtapa;
+	}
+	public void setIdEtapa(int idEtapa) {
+		this.idEtapa = idEtapa;
+	}
+	public String getDateOs() {
+		return dateOs;
+	}
+	public void setDateOs(String dateOs) {
+		this.dateOs = dateOs;
+	}
+	public int getIdProcesso() {
+		return idProcesso;
+	}
+	public void setIdProcesso(int idProcesso) {
+		this.idProcesso = idProcesso;
+	}
 	public int getIdOS() {
 		return idOS;
 	}
