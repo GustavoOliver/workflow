@@ -13,28 +13,7 @@ public class CargoDAO extends Cargo{
 		bd = new BD();
 	}
 	
-	public String excluir(int idCargo) {
-		try{
-			bd.getConnection();
-			sql = "delete from cargo where idCargo = ?";
-			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(1, getIdCargo());
-			int n = bd.st.executeUpdate();
-			if(n==1){
-				return "Cargo excluído com sucesso!";
-			}
-			else{
-				return "Código não encontrado!";
-			}
-		}
-		catch(SQLException erro){
-		}
-		finally{
-			bd.close();
-		}
-		return "Falha na exclusão!";
-		
-	}
+	
 
 	public String gravar() {
 		try{

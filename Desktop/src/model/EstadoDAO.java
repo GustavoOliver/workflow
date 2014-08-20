@@ -13,28 +13,7 @@ public class EstadoDAO extends Estado {
 		bd = new BD();
 	}
 	
-	public String excluir() {
-		try{
-			bd.getConnection();
-			sql = "delete from estado where codigo = ?";
-			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(1, getIdEstado());
-			int n = bd.st.executeUpdate();
-			if(n==1){
-				return "Time excluído com sucesso!";
-			}
-			else{
-				return "Código não encontrado!";
-			}
-		}
-		catch(SQLException erro){
-		}
-		finally{
-			bd.close();
-		}
-		return "Falha na exclusão!";
-		
-	}
+	
 
 	public String gravar() {
 		try{
