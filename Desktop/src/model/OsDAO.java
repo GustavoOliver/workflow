@@ -40,10 +40,9 @@ public class OsDAO extends Os {
 		try{
 			
 		
-			sql = "insert into os values (?,?,?,?,?,?,?,?)";
+			sql = "insert into os values (null,?,?,?,?,?,?,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(1,getIdOS());
 			bd.st.setInt(2,getIdProcesso());
 			bd.st.setInt(3,getIdFuncionario());
 			bd.st.setInt(4,getIdCliente());

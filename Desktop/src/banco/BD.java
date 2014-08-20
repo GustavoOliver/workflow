@@ -8,11 +8,11 @@ public class BD {
 	public ResultSet rs = null; //recebe resultado SQL
 	
 	private final String DRIVER = "com.mysql.jdbc.Driver";
-	private final String DATABASENAME = "workflow";
-	private final String URL = "jdbc:mysql://127.0.0.1:3306/"+
+	private final String DATABASENAME = "marlo910_workflow";
+	private final String URL = "jdbc:mysql://108.167.132.15:3306/"+
 											DATABASENAME;
-	private final String LOGIN = "root";
-	private final String SENHA = "1234";
+	private final String LOGIN = "marlo910_teste";
+	private final String SENHA = "#!#000F3p9J5000#!#";
 	
 	/**
 	 * Realiza a conexão ao banco de dados

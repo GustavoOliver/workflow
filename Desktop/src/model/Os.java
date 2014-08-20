@@ -1,5 +1,13 @@
 package model;
 
+/**
+ * A classe OS é responsável por conter todas as informações referentes a
+ * ordem de serviço,nelas devem constar informações do cliente,máquina,
+ * processo e etapa, assim como as datas de abertura e fechamento.
+ * @author MarlonSilva
+ *
+ */
+
 public class Os {
 	
 	private int idOS,idCliente,idFuncionario,idMaquina,idProcesso,idEtapa;

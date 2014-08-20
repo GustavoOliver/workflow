@@ -39,19 +39,19 @@ public class CargoDAO extends Cargo{
 	public String gravar() {
 		try{
 			
-			sql = "insert into cargo values (?,?,?)";
+			sql = "insert into cargo values (null,?,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(1, getIdCargo());
-			bd.st.setString(2, getFuncao());
-			bd.st.setString(3, getDescricao());
+			bd.st.setString(1, getFuncao());
+			bd.st.setString(2, getDescricao());
 			
 			int n = bd.st.executeUpdate();
 			if(n==1){
-				return "operação realizada com sucesso!";
+				return "Operação realizada com sucesso!";
+				
 			}
 			else{
-				return "Código não encontrado!";
+				return "Falha no cadastro!";
 			}
 		}
 		catch(SQLException erro){
@@ -64,8 +64,8 @@ public class CargoDAO extends Cargo{
 
 
 	/**
-	 * verifica se um determinado time existe no BD
-	 * A busca é feita a partir do código do time
+	 * verifica se um determinado cargo existe no BD
+	 * A busca é feita a partir do código do cargo
 	 */
 	public boolean localizar(int idCargo) {
 		try{
@@ -86,19 +86,15 @@ public class CargoDAO extends Cargo{
 	}
 
 	
-	/**
-	 * retorna o nome do time a partir do código
-	 * 
-	 */
-	public String buscarNome() {
+	public String buscarCargo() {
 		try{
 			bd.getConnection();
-			sql = "select funcao from cargo where idCargo = ?";
+			sql = "select Descricao from cargo where idCargo = ?";
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdCargo());
 			bd.rs = bd.st.executeQuery();
 			bd.rs.next();
-			return bd.rs.getString("funcao");//coluna da tabela
+			return bd.rs.getString("Descricao");//coluna da tabela
 		}
 		catch(SQLException erro){
 			
@@ -108,6 +104,6 @@ public class CargoDAO extends Cargo{
 		}
 		return "";
 	}
-
-		
+	
+			
 }

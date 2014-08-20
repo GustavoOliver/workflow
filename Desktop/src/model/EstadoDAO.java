@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import banco.BD;
 
-public class EstadoDAO extends Estado implements DAO{
+public class EstadoDAO extends Estado {
 
 	private BD bd;
 	private String sql;
@@ -18,7 +18,7 @@ public class EstadoDAO extends Estado implements DAO{
 			bd.getConnection();
 			sql = "delete from estado where codigo = ?";
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setString(1, getCodigo());
+			bd.st.setInt(1, getIdEstado());
 			int n = bd.st.executeUpdate();
 			if(n==1){
 				return "Time excluído com sucesso!";
@@ -38,18 +38,11 @@ public class EstadoDAO extends Estado implements DAO{
 
 	public String gravar() {
 		try{
-			int p1=1;int p2=2;
-			if(localizar()){//se encontrar
-				sql = "update estado set nome=? where codigo=?";
-			}
-			else{
-				sql = "insert into estado values (?,?)";
-				p1=2; p2=1; //inverte a ordem dos parâmetros
-			}
+			
+			sql = "insert into estado values (null,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setString(p1, getNome());
-			bd.st.setString(p2, getCodigo());
+			bd.st.setString(1, getDescricao());
 			int n = bd.st.executeUpdate();
 			if(n==1){
 				return "operação realizada com sucesso!";
@@ -76,7 +69,7 @@ public class EstadoDAO extends Estado implements DAO{
 			bd.getConnection();
 			sql = "select * from estado where codigo = ?";
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setString(1, getCodigo());
+			bd.st.setInt(1, getIdEstado());
 			bd.rs = bd.st.executeQuery();
 			return bd.rs.next();
 		}
@@ -94,15 +87,15 @@ public class EstadoDAO extends Estado implements DAO{
 	 * retorna o nome do time a partir do código
 	 * 
 	 */
-	public String buscarNome() {
+	public String buscarEstado() {
 		try{
 			bd.getConnection();
-			sql = "select nome from estado where codigo = ?";
+			sql = "select descricao from estado where idStatus= ?";
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setString(1, getCodigo());
+			bd.st.setInt(1, getIdEstado());
 			bd.rs = bd.st.executeQuery();
 			bd.rs.next();
-			return bd.rs.getString("nome");//coluna da tabela
+			return bd.rs.getString("descricao");//coluna da tabela
 		}
 		catch(SQLException erro){
 			
