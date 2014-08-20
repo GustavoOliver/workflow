@@ -2,12 +2,20 @@ package model;
 
 public class Processo {
 	
-	private int idFuncionario,idProcesso;
+	private int idFuncionario,idProcesso,id;
 	private String descricao;
 	
 	
 	
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getIdProcesso() {
 		return idProcesso;
 	}

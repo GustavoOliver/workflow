@@ -16,7 +16,7 @@ public class ProcessoDAO extends Processo{
 	public String gravar(){
 		
 		try {
-			sql = "insert into processo values(?,?,?)";
+			sql = "insert into processo values(null,?,?,?)";
 			bd.getConnection();
 			bd.st= bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdProcesso());
@@ -40,12 +40,13 @@ public class ProcessoDAO extends Processo{
 	public String atualizar(){
 		
 		try{
-			sql = "update processo set idProcesso=?,descricao=? where Funcionario_idFuncionario=?";
+			sql = "update processo set idProcesso=?,descricao=?, Funcionario_idFuncionario=? where id=?";
 			bd.getConnection();
 			bd.st= bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdProcesso());
 			bd.st.setString(2, getDescricao());
 			bd.st.setInt(3, getIdFuncionario());
+			bd.st.setInt(4, getId());
 			int n = bd.st.executeUpdate();
 			if(n==1){
 				return "Processo atualizado com sucesso!";

@@ -1,5 +1,7 @@
 package teste;
 
+import javax.swing.JOptionPane;
+
 import model.ProcessoDAO;
 
 public class TesteProcesso {
@@ -8,10 +10,18 @@ public class TesteProcesso {
 		
 		ProcessoDAO p = new ProcessoDAO();
 		
-		p.setIdProcesso(3);
+		/**
+		 * p.setIdProcesso(1);
 		p.setIdFuncionario(2);
-		p.setDescricao("Testando Update");
-		System.out.println(p.gravar());
+		p.setDescricao("Manutenção");
+		JOptionPane.showMessageDialog(null, p.gravar());
+		 */
+		
+		p.setIdProcesso(2);
+		p.setIdFuncionario(2);
+		p.setDescricao("Teste");
+		p.setId(1);
+		JOptionPane.showMessageDialog(null, p.atualizar());
 
 	}
 
