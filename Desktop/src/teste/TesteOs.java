@@ -11,9 +11,9 @@ public class TesteOs {
 		os.setIdEtapa(1);
 		os.setIdProcesso(1);
 		os.setIdMaquina(2);
-		os.setDateOs("19/08/2014");
-		os.setDate("20/08/2014");
-		os.gravar();
+		os.setDateOs("2014/08/21");
+		os.setDate("2014/08/22");
+		System.out.println(os.gravar());
 	}
 
 }

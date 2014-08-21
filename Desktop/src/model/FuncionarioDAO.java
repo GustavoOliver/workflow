@@ -38,17 +38,16 @@ public class FuncionarioDAO extends Funcionario{
 
 	public String gravar() {
 		try{
-			sql = "insert into funcionario values (?,?,?,?,?,?,?)";
+			sql = "insert into Funcionario values (null,?,?,?,?,?,?,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(1, getIdFuncionario());
-			bd.st.setInt(2, getIdCargo());
-			bd.st.setString(3, getNome());
-			bd.st.setString(4, getSobrenome());
-			bd.st.setString(5, getRg());
-			bd.st.setString(6, getCpf());
-			bd.st.setString(7, getEmail());
-			bd.st.setString(8, getSenha());
+			bd.st.setInt(1, getIdCargo());
+			bd.st.setString(2, getNome());
+			bd.st.setString(3, getSobrenome());
+			bd.st.setString(4, getRg());
+			bd.st.setString(5, getCpf());
+			bd.st.setString(6, getEmail());
+			bd.st.setString(7, getSenha());
 			int n = bd.st.executeUpdate();
 			if(n==1){
 				return "Funcionário inserido com sucesso!";
@@ -73,7 +72,7 @@ public class FuncionarioDAO extends Funcionario{
 	public boolean localizar() {
 		try{
 			bd.getConnection();
-			sql = "select * from funcionario where idFuncionario = ?";
+			sql = "select * from Funcionario where idFuncionario = ?";
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdFuncionario());
 			bd.rs = bd.st.executeQuery();
@@ -96,7 +95,7 @@ public class FuncionarioDAO extends Funcionario{
 	public String buscarNome() {
 		try{
 			bd.getConnection();
-			sql = "select nome from funcionario where idFuncionario = ?";
+			sql = "select nome from Funcionario where idFuncionario = ?";
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdFuncionario());
 			bd.rs = bd.st.executeQuery();

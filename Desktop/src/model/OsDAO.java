@@ -43,13 +43,13 @@ public class OsDAO extends Os {
 			sql = "insert into os values (null,?,?,?,?,?,?,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
-			bd.st.setInt(2,getIdProcesso());
-			bd.st.setInt(3,getIdFuncionario());
-			bd.st.setInt(4,getIdCliente());
-			bd.st.setInt(5,getIdMaquina());
-			bd.st.setString(6,getDateOs());
-			bd.st.setInt(7,getIdEtapa());
-			bd.st.setString(8,getDate());
+			bd.st.setInt(1,getIdProcesso());
+			bd.st.setInt(2,getIdFuncionario());
+			bd.st.setInt(3,getIdCliente());
+			bd.st.setInt(4,getIdMaquina());
+			bd.st.setString(5,getDateOs());
+			bd.st.setInt(6,getIdEtapa());
+			bd.st.setString(7,getDate());
 					
 			int n = bd.st.executeUpdate();
 			if(n==1){

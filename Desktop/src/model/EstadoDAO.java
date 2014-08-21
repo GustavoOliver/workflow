@@ -18,7 +18,7 @@ public class EstadoDAO extends Estado {
 	public String gravar() {
 		try{
 			
-			sql = "insert into estado values (null,?)";
+			sql = "insert into Estado values (null,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setString(1, getDescricao());
@@ -46,7 +46,7 @@ public class EstadoDAO extends Estado {
 	public boolean localizar() {
 		try{
 			bd.getConnection();
-			sql = "select * from estado where codigo = ?";
+			sql = "select * from Estado where codigo = ?";
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdEstado());
 			bd.rs = bd.st.executeQuery();
@@ -69,7 +69,7 @@ public class EstadoDAO extends Estado {
 	public String buscarEstado() {
 		try{
 			bd.getConnection();
-			sql = "select descricao from estado where idStatus= ?";
+			sql = "select descricao from Estado where idStatus= ?";
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setInt(1, getIdEstado());
 			bd.rs = bd.st.executeQuery();

@@ -18,7 +18,7 @@ public class CargoDAO extends Cargo{
 	public String gravar() {
 		try{
 			
-			sql = "insert into cargo values (null,?,?)";
+			sql = "insert into Cargo values (null,?,?)";
 			bd.getConnection();
 			bd.st = bd.con.prepareStatement(sql);
 			bd.st.setString(1, getFuncao());

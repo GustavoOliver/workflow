@@ -13,8 +13,8 @@ public class TesteCargo {
 		//c.setIdCargo(1);
 		//JOptionPane.showMessageDialog(null, c.buscarCargo());
 		
-		c.setDescricao("Técnico II");
-		c.setFuncao("Realizar manutenções em empresas na parte de infra");
+		c.setDescricao("Atendente");
+		c.setFuncao("Cadastro de Funcionários,Clientes,Máquinas e Fluxos de Serviços");
 		JOptionPane.showMessageDialog(null, c.gravar());
 		
 		

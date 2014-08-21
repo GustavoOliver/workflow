@@ -12,7 +12,8 @@ public class TesteEstado {
 		//realiza uma busca no bd  retorna o resultado de reprovado
 		//e.setIdEstado(2);
 		//JOptionPane.showMessageDialog(null, e.buscarEstado());
-
+		e.setDescricao("Aprovado");
+		System.out.println(e.gravar());
 	}
 
 }
